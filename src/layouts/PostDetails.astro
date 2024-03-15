@@ -158,11 +158,11 @@ const layoutProps = {
     for (let heading of headings) {
       heading.classList.add("group");
       let link = document.createElement("a");
-      link.innerText = "#";
-      link.className = "heading-link hidden group-hover:inline-block ml-2";
+      link.innerText = "¶";
+      link.className = "heading-link mr-2";
       link.href = "#" + heading.id;
       link.ariaHidden = "true";
-      heading.appendChild(link);
+      heading.insertBefore(link, heading.firstChild);
     }
   }
   addHeadingLinks();
