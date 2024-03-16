@@ -8,7 +8,6 @@ const blog = defineCollection({
       .object({
         author: z.string().default(SITE.author),
         pubDatetime: z.date(),
-        modDatetime: z.date().optional().nullable(),
         title: z.string(),
         isExternalPost: z.boolean().optional(),
         externalURL: z.string().url().optional().nullable(),

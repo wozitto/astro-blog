@@ -7,7 +7,6 @@ import {
 
 interface DatetimesProps {
   pubDatetime: string | Date;
-  modDatetime: string | Date | undefined | null;
 }
 
 interface Props extends DatetimesProps {
@@ -17,7 +16,6 @@ interface Props extends DatetimesProps {
 
 export default function Datetime({
   pubDatetime,
-  modDatetime,
   size = "sm",
   className,
 }: Props) {
@@ -34,19 +32,15 @@ export default function Datetime({
         <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
       </svg>
       <span className={`${size === "sm" ? "text-sm" : "text-base"}`}>
-        <FormattedDatetime
-          pubDatetime={pubDatetime}
-          modDatetime={modDatetime}
-        />
+        <FormattedDatetime pubDatetime={pubDatetime} />
       </span>
     </div>
   );
 }
 
-const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
+const FormattedDatetime = ({ pubDatetime }: DatetimesProps) => {
   const now = new Date();
   const publishedDate = new Date(pubDatetime);
-  const modifiedDate = modDatetime ? new Date(modDatetime) : null;
 
   const hoursDiff = differenceInHours(now, publishedDate);
   const daysDiff = differenceInDays(now, publishedDate);
@@ -64,26 +58,12 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
     displayDate = format(publishedDate, "yyyy/MM/dd");
   }
 
-  let displayModDate = "";
-  if (modifiedDate && modifiedDate > publishedDate) {
-    displayModDate = `${format(modifiedDate, "yyyy/MM/dd")}`;
-  }
-
   return (
     <div>
       Published:
       <time dateTime={publishedDate.toISOString()} className="ml-2">
         {displayDate}
       </time>
-      {modifiedDate && modifiedDate > publishedDate && displayModDate && (
-        <>
-          <span aria-hidden="true"> | </span>
-          Updated:
-          <time dateTime={modifiedDate.toISOString()} className="ml-2">
-            {displayModDate}
-          </time>
-        </>
-      )}
     </div>
   );
 };
