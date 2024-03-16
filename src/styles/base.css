@@ -33,7 +33,7 @@
   }
 
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
+    @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base;
   }
 
   section,
