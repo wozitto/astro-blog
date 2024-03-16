@@ -4,11 +4,12 @@
 
 @layer base {
   #sun-svg,
-  #moon-svg {
+  html[data-theme="dark"] #moon-svg {
     display: none;
   }
 
-  html[data-theme="dark"] #moon-svg,
+  /* stylelint-disable-next-line no-descending-specificity */
+  #moon-svg,
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
