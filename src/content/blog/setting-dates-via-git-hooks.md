@@ -3,8 +3,8 @@ author: Simon Smale
 pubDatetime: 2024-01-03T20:40:08Z
 modDatetime: 2024-01-08T18:59:05Z
 title: How to use Git Hooks to set Created and Modified Dates
-pinned: false
-draft: false
+isPinned: false
+isDraft: false
 tags:
   - docs
   - FAQ
@@ -47,7 +47,7 @@ grep -i '^M.*\.md$' |
 while read _ file; do
   filecontent=$(cat "$file")
   frontmatter=$(echo "$filecontent" | awk -v RS='---' 'NR==2{print}')
-  draft=$(echo "$frontmatter" | awk '/^draft: /{print $2}')
+  draft=$(echo "$frontmatter" | awk '/^isDraft: /{print $2}')
   if [ "$draft" = "false" ]; then
     echo "$file modDateTime updated"
     cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime: $(date -u "+%Y-%m-%dT%H:%M:%SZ")/" > tmp
@@ -56,7 +56,7 @@ while read _ file; do
   fi
   if [ "$draft" = "first" ]; then
     echo "First release of $file, draft set to false and modDateTime removed"
-    cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime:/" | sed "/---.*/,/---.*/s/^draft:.*$/draft: false/" > tmp
+    cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime:/" | sed "/---.*/,/---.*/s/^isDraft:.*$/isDraft: false/" > tmp
     mv tmp $file
     git add $file
   fi
@@ -88,7 +88,7 @@ To know the draft staus of the file, we need its frontmatter. In the following c
 ```shell
   filecontent=$(cat "$file")
   frontmatter=$(echo "$filecontent" | awk -v RS='---' 'NR==2{print}')
-  draft=$(echo "$frontmatter" | awk '/^draft: /{print $2}')
+  draft=$(echo "$frontmatter" | awk '/^isDraft: /{print $2}')
 ```
 
 Now we have the value for `draft` we are going to do 1 of 3 things, set the modDatetime to now (when draft is false `if [ "$draft" = "false" ]; then`), clear the modDatetime and set draft to false (when draft is set to first `if [ "$draft" = "first" ]; then`), or nothing (in any other case).
@@ -150,8 +150,8 @@ const blog = defineCollection({
 -     modDatetime: z.date().optional(),
 +     modDatetime: z.date().optional().nullable(),
       title: z.string(),
-      pinned: z.boolean().optional(),
-      draft: z.boolean().optional(),
+      isPinned: z.boolean().optional(),
+      isDraft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
       ogImage: image()
         .refine(img => img.width >= 1200 && img.height >= 630, {

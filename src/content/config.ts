@@ -12,8 +12,8 @@ const blog = defineCollection({
         title: z.string(),
         isExternalPost: z.boolean().optional(),
         externalURL: z.string().url().optional().nullable(),
-        pinned: z.boolean().optional(),
-        draft: z.boolean().optional(),
+        isPinned: z.boolean().optional(),
+        isDraft: z.boolean().optional(),
         tags: z.array(z.string()).default(["others"]),
         ogImage: image()
           .refine(img => img.width >= 1200 && img.height >= 630, {

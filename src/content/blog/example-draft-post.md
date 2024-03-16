@@ -3,8 +3,8 @@ title: Example Draft Post
 author: Sat Naing
 pubDatetime: 2022-06-06T04:06:31Z
 slug: example-draft-post
-pinned: false
-draft: true
+isPinned: false
+isDraft: true
 tags:
   - TypeScript
   - Astro

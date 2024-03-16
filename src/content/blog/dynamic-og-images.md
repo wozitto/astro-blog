@@ -3,8 +3,8 @@ author: Sat Naing
 pubDatetime: 2022-12-28T04:59:04.866Z
 title: Dynamic OG image generation in AstroPaper blog posts
 slug: dynamic-og-image-generation-in-astropaper-blog-posts
-pinned: false
-draft: false
+isPinned: false
+isDraft: false
 tags:
   - docs
   - release

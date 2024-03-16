@@ -13,7 +13,7 @@ import { SOCIALS } from "@config";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
-const pinnedPosts = sortedPosts.filter(({ data }) => data.pinned);
+const pinnedPosts = sortedPosts.filter(({ data }) => data.isPinned);
 const recentPosts = sortedPosts;
 
 const socialCount = SOCIALS.filter(social => social.active).length;

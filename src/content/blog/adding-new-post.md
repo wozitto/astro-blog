@@ -4,8 +4,8 @@ pubDatetime: 2022-09-23T15:22:00Z
 modDatetime: 2023-12-21T09:12:47.400Z
 title: Adding new posts in AstroPaper theme
 slug: adding-new-posts-in-astropaper-theme
-pinned: true
-draft: false
+isPinned: true
+isDraft: false
 tags:
   - docs
 description:
@@ -53,7 +53,7 @@ If you omit `tags` in a blog post (in other words, if no tag is specified), the 
 // src/content/config.ts
 export const blogSchema = z.object({
   // ---
-  draft: z.boolean().optional(),
+  isDraft: z.boolean().optional(),
   tags: z.array(z.string()).default(["others"]), // replace "others" with whatever you want
   // ---
 });
@@ -70,8 +70,8 @@ title: The title of the post
 author: your name
 pubDatetime: 2022-09-21T05:17:19Z
 slug: the-title-of-the-post
-pinned: true
-draft: false
+isPinned: true
+isDraft: false
 tags:
   - some
   - example
