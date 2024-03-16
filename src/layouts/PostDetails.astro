@@ -15,8 +15,7 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const { title, author, description, ogImage, canonicalURL, pubDatetime, tags } =
-  post.data;
+const { title, author, description, ogImage, pubDatetime, tags } = post.data;
 
 const { Content } = await post.render();
 
@@ -31,7 +30,6 @@ const layoutProps = {
   author,
   description,
   pubDatetime,
-  canonicalURL,
   ogImage: ogUrl,
   scrollSmooth: true,
 };
