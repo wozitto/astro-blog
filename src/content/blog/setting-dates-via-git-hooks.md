@@ -3,7 +3,7 @@ author: Simon Smale
 pubDatetime: 2024-01-03T20:40:08Z
 modDatetime: 2024-01-08T18:59:05Z
 title: How to use Git Hooks to set Created and Modified Dates
-featured: false
+pinned: false
 draft: false
 tags:
   - docs
@@ -150,7 +150,7 @@ const blog = defineCollection({
 -     modDatetime: z.date().optional(),
 +     modDatetime: z.date().optional().nullable(),
       title: z.string(),
-      featured: z.boolean().optional(),
+      pinned: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
       ogImage: image()

@@ -3,7 +3,7 @@ author: Sat Naing
 pubDatetime: 2023-09-25T10:25:54.547Z
 title: AstroPaper 3.0
 slug: astro-paper-v3
-featured: false
+pinned: false
 ogImage: https://github.com/satnaing/astro-paper/assets/53733092/1ef0cf03-8137-4d67-ac81-84a032119e3a
 tags:
   - release
@@ -29,7 +29,7 @@ AstroPaper now fully supports [Astro v3](https://astro.build/blog/astro-3/), off
 
 Besides, we've added support for Astro's [ViewTransitions API](https://docs.astro.build/en/guides/view-transitions/), allowing you to create captivating and dynamic transitions between views.
 
-In the "Recent Section", only non-featured posts will be displayed to avoid duplications and better support for ViewTransitions API.
+In the "Recent Section", only non-pinned posts will be displayed to avoid duplications and better support for ViewTransitions API.
 
 ### Update OG Image Generation Logic
 
