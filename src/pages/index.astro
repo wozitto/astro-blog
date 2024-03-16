@@ -14,7 +14,7 @@ const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
 const pinnedPosts = sortedPosts.filter(({ data }) => data.pinned);
-const recentPosts = sortedPosts.filter(({ data }) => !data.pinned);
+const recentPosts = sortedPosts;
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
@@ -96,7 +96,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>
-                index < 4 && (
+                index < 3 && (
                   <Card
                     href={`/posts/${slug}/`}
                     frontmatter={data}
