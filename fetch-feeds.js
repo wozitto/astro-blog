@@ -1,4 +1,3 @@
-// fetch-feeds.js
 const fs = require('fs-extra');
 const Parser = require('rss-parser');
 
@@ -6,6 +5,10 @@ const RSS_URLS = [
   "https://zenn.dev/wozitto/feed",
   "https://note.com/toshito_hirooka/rss",
   "https://qiita.com/wozitto/feed"
+];
+
+const PINNED_POSTS_URLS = [
+  "https://zenn.dev/moneyforward/articles/075a74334ca512"
 ];
 
 const parser = new Parser();
@@ -19,6 +22,7 @@ async function fetchFeedItems(url) {
       contentSnippet: contentSnippet?.replace(/\n/g, ""),
       isoDate,
       dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
+      isPinned: PINNED_POSTS_URLS.includes(link)
     }));
   } catch (error) {
     console.error(`Error fetching feed from ${url}:`, error);
