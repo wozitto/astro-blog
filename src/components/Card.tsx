@@ -22,6 +22,7 @@ export default function Card({ href, post, secHeading = true }: Props) {
 
   return (
     <li className="my-6">
+      <Datetime pubDatetime={pubDatetime} />
       <a
         href={href}
         {...(post.type === "feedPost"
@@ -63,7 +64,6 @@ export default function Card({ href, post, secHeading = true }: Props) {
           </h3>
         )}
       </a>
-      <Datetime pubDatetime={pubDatetime} />
       <p>{description}</p>
     </li>
   );
