@@ -25,11 +25,9 @@ const combinedPosts = [
   })),
 ];
 
-const sortedCombinedPosts = sortCombinedPosts(combinedPosts);
-const pinnedPosts = sortedCombinedPosts.filter(post => post.isPinned);
-const recentPosts = sortedCombinedPosts
-  .filter(post => !post.isPinned)
-  .slice(0, 3);
+const sortedPosts = sortCombinedPosts(combinedPosts);
+const pinnedPosts = sortedPosts.filter(post => post.isPinned);
+const recentPosts = sortedPosts.filter(post => !post.isPinned).slice(0, 3);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
