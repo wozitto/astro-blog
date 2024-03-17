@@ -1,12 +1,11 @@
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState, useMemo } from "react";
 import Card from "@components/Card";
-import type { CollectionEntry } from "astro:content";
 
 export type SearchItem = {
   title: string;
   description: string;
-  data: CollectionEntry<"blog">["data"];
+  data: any;
   slug: string;
 };
 
@@ -111,7 +110,11 @@ export default function SearchBar({ searchList }: Props) {
         {searchResults &&
           searchResults.map(({ item, refIndex }) => (
             <Card
-              href={`/posts/${item.slug}/`}
+              href={
+                item.data.type === "post"
+                  ? `/posts/${item.slug}/`
+                  : item.data.link
+              }
               post={item.data}
               key={`${refIndex}-${item.slug}`}
             />
