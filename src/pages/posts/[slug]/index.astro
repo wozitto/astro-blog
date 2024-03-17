@@ -5,20 +5,33 @@ import PostDetails from "@layouts/PostDetails.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import getPageNumbers from "@utils/getPageNumbers";
 import getPagination from "@utils/getPagination";
+import feedPosts from "../../../content/feeds/posts.json";
+import sortCombinedPosts from "@utils/sortCombinedPosts";
 
 export interface Props {
   post: CollectionEntry<"blog">;
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.isDraft);
+  const markdownPosts = await getCollection(
+    "blog",
+    ({ data }) => !data.isDraft
+  );
+  const combinedPosts: any[] = [
+    ...markdownPosts,
+    ...feedPosts.map(feedPost => ({
+      feedPost,
+      slug: feedPost.title,
+      type: "feedPost",
+    })),
+  ];
 
-  const postResult = posts.map(post => ({
+  const postResult = combinedPosts.map(post => ({
     params: { slug: post.slug },
     props: { post },
   }));
 
-  const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
+  const pagePaths = getPageNumbers(combinedPosts.length).map(pageNum => ({
     params: { slug: String(pageNum) },
   }));
 
@@ -28,9 +41,21 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { post } = Astro.props;
 
-const posts = await getCollection("blog");
+const markdownPosts = await getCollection("blog");
 
-const sortedPosts = getSortedPosts(posts);
+const combinedPosts = [
+  ...markdownPosts.map(post => ({
+    ...post.data,
+    slug: post.slug,
+    type: "post",
+  })),
+  ...feedPosts.map(feedPost => ({
+    ...feedPost,
+    type: "feedPost",
+  })),
+];
+
+const sortedPosts = sortCombinedPosts(combinedPosts);
 
 const pagination = getPagination({
   posts: sortedPosts,

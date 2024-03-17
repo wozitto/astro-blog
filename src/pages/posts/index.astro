@@ -1,15 +1,28 @@
 ---
 import { getCollection } from "astro:content";
 import Posts from "@layouts/Posts.astro";
-import getSortedPosts from "@utils/getSortedPosts";
 import getPagination from "@utils/getPagination";
+import feedPosts from "../../content/feeds/posts.json";
+import sortCombinedPosts from "@utils/sortCombinedPosts";
 
-const posts = await getCollection("blog");
+const markdownPosts = await getCollection("blog");
 
-const sortedPosts = getSortedPosts(posts);
+const combinedPosts = [
+  ...markdownPosts.map(post => ({
+    ...post.data,
+    slug: post.slug,
+    type: "post",
+  })),
+  ...feedPosts.map(feedPost => ({
+    ...feedPost,
+    type: "feedPost",
+  })),
+];
+
+const sortedCombinedPosts = sortCombinedPosts(combinedPosts);
 
 const pagination = getPagination({
-  posts: sortedPosts,
+  posts: sortedCombinedPosts,
   page: 1,
   isIndex: true,
 });

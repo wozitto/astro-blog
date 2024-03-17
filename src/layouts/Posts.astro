@@ -11,7 +11,7 @@ import { SITE } from "@config";
 export interface Props {
   currentPage: number;
   totalPages: number;
-  paginatedPosts: CollectionEntry<"blog">[];
+  paginatedPosts: any[];
 }
 
 const { currentPage, totalPages, paginatedPosts } = Astro.props;
@@ -22,8 +22,12 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {
-        paginatedPosts.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} post={data} />
+        paginatedPosts.map(post => (
+          <Card
+            href={post.type === "post" ? `/posts/${post.slug}/` : post.link}
+            post={post}
+            secHeading={false}
+          />
         ))
       }
     </ul>
