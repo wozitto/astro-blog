@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   href?: string;
-  frontmatter: {
+  post: {
     title: string;
     pubDatetime: string;
     description: string;
@@ -13,8 +13,8 @@ export interface Props {
   secHeading?: boolean;
 }
 
-export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDatetime, description } = frontmatter;
+export default function Card({ href, post, secHeading = true }: Props) {
+  const { title, pubDatetime, description } = post;
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
@@ -25,7 +25,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
     <li className="my-6">
       <a
         href={href}
-        {...(frontmatter.type === "feedPost"
+        {...(post.type === "feedPost"
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
         className="inline-block text-lg font-medium text-skin-accent underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
