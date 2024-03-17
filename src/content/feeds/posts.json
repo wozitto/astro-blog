@@ -35,13 +35,6 @@
     "isPinned": false
   },
   {
-    "link": "https://zenn.dev/wozitto/articles/26dc080e161edd",
-    "title": "packageの複数のバージョンを管理する方法",
-    "description": "負債解消の際、少しずつリファクタリングをするため、既に使用しているのバージョンのpackageを残しつつバージョンアップしたpackageを使いたい時があると思う。そんな時に使える小技の紹介まずnpmとyarnにはエイリアスを使用したinstallがあるドキュメントはこちらnpmyarnnpmnpm install <alias>@npm:<name>yarnyarn add <alias>@npm:<name>なので複数バージョンを管理するためにはこのようにエイリアスを指定し、パッケージ名の後に@<version...",
-    "pubDatetime": "2022-10-24T06:31:32.000Z",
-    "isPinned": false
-  },
-  {
     "link": "https://note.com/toshito_hirooka/n/n629c99a5ba74",
     "title": "カナダはクレーターを使って水力発電をしている",
     "description": "この記事は、株式会社マネーフォワード福岡開発拠点が主催している Money Forward Fukuoka Advent Calendar 2023の21日目の投稿です。20日目は Rem さんの エンジニア、故郷へ帰る でした。はじまり続きをみる",

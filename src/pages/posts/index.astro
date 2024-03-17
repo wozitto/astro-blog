@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Posts from "@layouts/Posts.astro";
-import getPagination from "@utils/getPagination";
 import feedPosts from "../../content/feeds/posts.json";
 import sortCombinedPosts from "@utils/sortCombinedPosts";
 
@@ -19,13 +18,7 @@ const combinedPosts = [
   })),
 ];
 
-const sortedCombinedPosts = sortCombinedPosts(combinedPosts);
-
-const pagination = getPagination({
-  posts: sortedCombinedPosts,
-  page: 1,
-  isIndex: true,
-});
+const sortedPosts = sortCombinedPosts(combinedPosts);
 ---
 
-<Posts {...pagination} />
+<Posts posts={sortedPosts} />

@@ -2,9 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Posts from "@layouts/Posts.astro";
 import PostDetails from "@layouts/PostDetails.astro";
-import getSortedPosts from "@utils/getSortedPosts";
 import getPageNumbers from "@utils/getPageNumbers";
-import getPagination from "@utils/getPagination";
 import feedPosts from "../../../content/feeds/posts.json";
 import sortCombinedPosts from "@utils/sortCombinedPosts";
 
@@ -38,7 +36,6 @@ export async function getStaticPaths() {
   return [...postResult, ...pagePaths];
 }
 
-const { slug } = Astro.params;
 const { post } = Astro.props;
 
 const markdownPosts = await getCollection("blog");
@@ -56,11 +53,6 @@ const combinedPosts = [
 ];
 
 const sortedPosts = sortCombinedPosts(combinedPosts);
-
-const pagination = getPagination({
-  posts: sortedPosts,
-  page: slug,
-});
 ---
 
-{post ? <PostDetails post={post} /> : <Posts {...pagination} />}
+{post ? <PostDetails post={post} /> : <Posts posts={sortedPosts} />}
