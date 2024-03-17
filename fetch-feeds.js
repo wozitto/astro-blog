@@ -17,12 +17,11 @@ async function fetchFeedItems(url) {
   try {
     const feed = await parser.parseURL(url);
     return feed.items.map(({ title, link, contentSnippet, isoDate }) => ({
-      title,
       link,
-      contentSnippet: contentSnippet?.replace(/\n/g, ""),
-      isoDate,
-      dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
-      isPinned: PINNED_POSTS_URLS.includes(link)
+      title,
+      description: contentSnippet?.replace(/\n/g, ""),
+      pubDatetime: new Date(isoDate),
+      isPinned: PINNED_POSTS_URLS.includes(link),
     }));
   } catch (error) {
     console.error(`Error fetching feed from ${url}:`, error);

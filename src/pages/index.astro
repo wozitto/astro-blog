@@ -7,15 +7,27 @@ import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
-import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
-import feeds from "../content/feeds/posts.json";
+import feedPosts from "../content/feeds/posts.json";
+import sortCombinedPosts from "@utils/sortCombinedPosts";
 
-const posts = await getCollection("blog");
+const markdownPosts = await getCollection("blog");
 
-const sortedPosts = getSortedPosts(posts);
-const pinnedPosts = sortedPosts.filter(({ data }) => data.isPinned);
-const recentPosts = sortedPosts;
+const combinedPosts = [
+  ...markdownPosts.map(post => ({
+    ...post.data,
+    slug: post.slug,
+    type: "post",
+  })),
+  ...feedPosts.map(feedPost => ({
+    ...feedPost,
+    type: "feedPost",
+  })),
+];
+
+const sortedCombinedPosts = sortCombinedPosts(combinedPosts);
+const pinnedPosts = sortedCombinedPosts.filter(post => post.isPinned);
+const recentPosts = sortedCombinedPosts.slice(0, 3);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
@@ -76,10 +88,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <section id="pinned">
             <h2>Pinned</h2>
             <ul>
-              {pinnedPosts.map(({ data, slug }) => (
+              {pinnedPosts.map(post => (
                 <Card
-                  href={`/posts/${slug}/`}
-                  frontmatter={data}
+                  href={
+                    post.type === "post" ? `/posts/${post.slug}/` : post.link
+                  }
+                  frontmatter={post}
                   secHeading={false}
                 />
               ))}
@@ -95,16 +109,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         <section id="recent-posts">
           <h2>Recent Posts</h2>
           <ul>
-            {recentPosts.map(
-              ({ data, slug }, index) =>
-                index < 3 && (
-                  <Card
-                    href={`/posts/${slug}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
-                )
-            )}
+            {recentPosts.map(post => (
+              <Card
+                href={post.type === "post" ? `/posts/${post.slug}/` : post.link}
+                frontmatter={post}
+                secHeading={false}
+              />
+            ))}
           </ul>
         </section>
       )

@@ -1,82 +1,72 @@
 [
   {
-    "title": "画像が「情報」を持っているかどうかの判断基準、持っていない場合はalt=\"\"を指定しよう",
     "link": "https://zenn.dev/wozitto/articles/bc93f64ba4d36a",
-    "contentSnippet": "はじめにこの記事は、画像を「純粋な装飾のための画像」と見なすか、「情報を持っている画像」と見なすかの判断基準についての私見とともに、それぞれのケースでの実装についてまとめたものです。この記事での「画像」とは実装レベルではimg要素のことを指します。 結論画像が削除されても、削除前と同様の情報量、機能を提供できる場合、その画像は純粋な装飾のための画像と考えられます。「純粋な装飾のための画像」は可能な限りCSSのbackground-imageプロパティを用いて実装する。実装上の都合によりbackground-imageによる実装が難しい場合はalt=\"\"を指定する。...",
-    "isoDate": "2024-03-11T01:25:33.000Z",
-    "dateMiliSeconds": 1710120333000,
+    "title": "画像が「情報」を持っているかどうかの判断基準、持っていない場合はalt=\"\"を指定しよう",
+    "description": "はじめにこの記事は、画像を「純粋な装飾のための画像」と見なすか、「情報を持っている画像」と見なすかの判断基準についての私見とともに、それぞれのケースでの実装についてまとめたものです。この記事での「画像」とは実装レベルではimg要素のことを指します。 結論画像が削除されても、削除前と同様の情報量、機能を提供できる場合、その画像は純粋な装飾のための画像と考えられます。「純粋な装飾のための画像」は可能な限りCSSのbackground-imageプロパティを用いて実装する。実装上の都合によりbackground-imageによる実装が難しい場合はalt=\"\"を指定する。...",
+    "pubDatetime": "2024-03-11T01:25:33.000Z",
     "isPinned": false
   },
   {
-    "title": "カナダはクレーターを使って水力発電をしている",
-    "link": "https://note.com/toshito_hirooka/n/n629c99a5ba74",
-    "contentSnippet": "この記事は、株式会社マネーフォワード福岡開発拠点が主催している Money Forward Fukuoka Advent Calendar 2023の21日目の投稿です。20日目は Rem さんの エンジニア、故郷へ帰る でした。はじまり続きをみる",
-    "isoDate": "2023-12-21T01:52:28.000Z",
-    "dateMiliSeconds": 1703123548000,
-    "isPinned": false
-  },
-  {
-    "title": "marginではなく、レイアウトを指定しよう ~レイアウト手法 Stack、Clusterの紹介~",
     "link": "https://zenn.dev/moneyforward/articles/075a74334ca512",
-    "contentSnippet": "この記事は、Money Forward Engineering 1 Advent Calendar 2023 19日目の投稿です。前回はTaskさんの『小さいプルリクエストを作る技術』でした！いやはや、CSSは難しいですよね...複雑な入れ子構造になった要素にスタイルを当てるときのカスケードバトルどこから継承されたのか分からない謎のスタイルインラインスタイル、クラスベースのスタイル、CSS in JSが混在しカオスになった指定方法僕自身、今までたくさんの辛みCSSに頭を悩ませてきました...今日はそんな管理の難しいCSSを少しでも分かりやすくするための、レイアウト手法を紹...",
-    "isoDate": "2023-12-19T01:00:03.000Z",
-    "dateMiliSeconds": 1702947603000,
+    "title": "marginではなく、レイアウトを指定しよう ~レイアウト手法 Stack、Clusterの紹介~",
+    "description": "この記事は、Money Forward Engineering 1 Advent Calendar 2023 19日目の投稿です。前回はTaskさんの『小さいプルリクエストを作る技術』でした！いやはや、CSSは難しいですよね...複雑な入れ子構造になった要素にスタイルを当てるときのカスケードバトルどこから継承されたのか分からない謎のスタイルインラインスタイル、クラスベースのスタイル、CSS in JSが混在しカオスになった指定方法僕自身、今までたくさんの辛みCSSに頭を悩ませてきました...今日はそんな管理の難しいCSSを少しでも分かりやすくするための、レイアウト手法を紹...",
+    "pubDatetime": "2023-12-19T01:00:03.000Z",
     "isPinned": true
   },
   {
-    "title": "aria-labelで始める、アクセシビリティ改善活動",
     "link": "https://zenn.dev/moneyforward/articles/b5c9b060cf9237",
-    "contentSnippet": "本記事では、aria-labelを利用したアクセシビリティ改善についてまとめていきたいと思います。 アクセシブルなサービスとは!本記事ではカラーコントラストなど出力レベルのアクセシビリティではなく、文書構造としてのアクセシビリティについて触れていきます。そもそもアクセシブルなサービスとは、どのようなサービス、実装を指すのでしょうか。端的に表現するならば、「伝えたい情報が正しい文書構造によって実装されているサービス」だと考えます。例えば以下のようなボタンの実装があったとします。<button aria-label=\"削除\">編集</button>...",
-    "isoDate": "2023-11-15T01:14:19.000Z",
-    "dateMiliSeconds": 1700010859000,
+    "title": "aria-labelで始める、アクセシビリティ改善活動",
+    "description": "本記事では、aria-labelを利用したアクセシビリティ改善についてまとめていきたいと思います。 アクセシブルなサービスとは!本記事ではカラーコントラストなど出力レベルのアクセシビリティではなく、文書構造としてのアクセシビリティについて触れていきます。そもそもアクセシブルなサービスとは、どのようなサービス、実装を指すのでしょうか。端的に表現するならば、「伝えたい情報が正しい文書構造によって実装されているサービス」だと考えます。例えば以下のようなボタンの実装があったとします。<button aria-label=\"削除\">編集</button>...",
+    "pubDatetime": "2023-11-15T01:14:19.000Z",
     "isPinned": false
   },
   {
-    "title": "Testing libraryでのgetBy, queryBy, findByの違いについて",
     "link": "https://zenn.dev/moneyforward/articles/20230329-query",
-    "contentSnippet": "getBy, queryBy, findByの違いTesting Library には以下３種類のqueryがあります。開発において、たびたびqueryの使い分けで混乱してしまうことがあったので、整理をこめて紹介します。getByqueryByfindByそれぞれ実装例と共に説明していきます。 getBy*指定された条件に一致する単一の要素を返します。条件に一致する要素が見つからなかった場合、または複数のマッチが見つかった場合はエラーを返されます。同じ条件で複数の要素を確認する場合は、代わりにgetAllByを使用します。getByは特定の条件に一致す...",
-    "isoDate": "2023-03-31T07:41:11.000Z",
-    "dateMiliSeconds": 1680248471000,
+    "title": "Testing libraryでのgetBy, queryBy, findByの違いについて",
+    "description": "getBy, queryBy, findByの違いTesting Library には以下３種類のqueryがあります。開発において、たびたびqueryの使い分けで混乱してしまうことがあったので、整理をこめて紹介します。getByqueryByfindByそれぞれ実装例と共に説明していきます。 getBy*指定された条件に一致する単一の要素を返します。条件に一致する要素が見つからなかった場合、または複数のマッチが見つかった場合はエラーを返されます。同じ条件で複数の要素を確認する場合は、代わりにgetAllByを使用します。getByは特定の条件に一致す...",
+    "pubDatetime": "2023-03-31T07:41:11.000Z",
     "isPinned": false
   },
   {
-    "title": "EnzymeよりReact Testing Libraryでしょ〜",
     "link": "https://zenn.dev/moneyforward/articles/7b579adb6967df",
-    "contentSnippet": "この記事は Money Forward Engineering 1 Advent Calendar 2022 23 日目の投稿です 🎄22 日目は コットン さんによる 『技術負債解消に取り組んだ新卒1年目を振り返ります』 でした。備忘録がてらなぜフロントエンドテストツールとしてEnzymeではなくReact Testing Libraryを使うべきか書こうと思います。最初に、昨今のフロントエンドテストはTesting TrophyというWebアプリケーションの効率的なテスト手法に則りテストを書いていくことが良いとされています。 Testing Torophyref: h...",
-    "isoDate": "2022-12-26T10:28:11.000Z",
-    "dateMiliSeconds": 1672050491000,
+    "title": "EnzymeよりReact Testing Libraryでしょ〜",
+    "description": "この記事は Money Forward Engineering 1 Advent Calendar 2022 23 日目の投稿です 🎄22 日目は コットン さんによる 『技術負債解消に取り組んだ新卒1年目を振り返ります』 でした。備忘録がてらなぜフロントエンドテストツールとしてEnzymeではなくReact Testing Libraryを使うべきか書こうと思います。最初に、昨今のフロントエンドテストはTesting TrophyというWebアプリケーションの効率的なテスト手法に則りテストを書いていくことが良いとされています。 Testing Torophyref: h...",
+    "pubDatetime": "2022-12-26T10:28:11.000Z",
     "isPinned": false
   },
   {
-    "title": "高卒新卒でマネーフォワードに入社してみて",
-    "link": "https://note.com/toshito_hirooka/n/nb612c6a9898b",
-    "contentSnippet": "この記事は株式会社マネーフォワードの福岡開発拠点が主催している Money Forward Fukuoka Advent Calendar 2022 の 21 日目の記事です。昨日は 新井 志奈 さんによる「マネーフォワード福岡開発拠点で5周年記念総会とHappy Hourを開催しました！」でした。はじめまして、マネーフォワード福岡拠点所属のフロントエンドエンジニアのwozittoです。続きをみる",
-    "isoDate": "2022-12-22T03:41:23.000Z",
-    "dateMiliSeconds": 1671680483000,
-    "isPinned": false
-  },
-  {
-    "title": "packageの複数のバージョンを管理する方法",
     "link": "https://zenn.dev/wozitto/articles/26dc080e161edd",
-    "contentSnippet": "負債解消の際、少しずつリファクタリングをするため、既に使用しているのバージョンのpackageを残しつつバージョンアップしたpackageを使いたい時があると思う。そんな時に使える小技の紹介まずnpmとyarnにはエイリアスを使用したinstallがあるドキュメントはこちらnpmyarnnpmnpm install <alias>@npm:<name>yarnyarn add <alias>@npm:<name>なので複数バージョンを管理するためにはこのようにエイリアスを指定し、パッケージ名の後に@<version...",
-    "isoDate": "2022-10-24T06:31:32.000Z",
-    "dateMiliSeconds": 1666593092000,
-    "isPinned": false
-  },
-  {
     "title": "packageの複数のバージョンを管理する方法",
-    "link": "https://qiita.com/wozitto/items/00a54846add7151ce27b",
-    "contentSnippet": "負債解消の際、少しずつリファクタリングをするため、既に使用しているのバージョンのpackageを残しつつバージョンアップしたpackageを使いたい時があると思う。そんな時に使える小技の紹介まず…",
-    "isoDate": "2022-06-18T00:45:25.000Z",
-    "dateMiliSeconds": 1655513125000,
+    "description": "負債解消の際、少しずつリファクタリングをするため、既に使用しているのバージョンのpackageを残しつつバージョンアップしたpackageを使いたい時があると思う。そんな時に使える小技の紹介まずnpmとyarnにはエイリアスを使用したinstallがあるドキュメントはこちらnpmyarnnpmnpm install <alias>@npm:<name>yarnyarn add <alias>@npm:<name>なので複数バージョンを管理するためにはこのようにエイリアスを指定し、パッケージ名の後に@<version...",
+    "pubDatetime": "2022-10-24T06:31:32.000Z",
     "isPinned": false
   },
   {
-    "title": "高校生が１ヶ月で基本情報技術者試験に合格してみた",
+    "link": "https://note.com/toshito_hirooka/n/n629c99a5ba74",
+    "title": "カナダはクレーターを使って水力発電をしている",
+    "description": "この記事は、株式会社マネーフォワード福岡開発拠点が主催している Money Forward Fukuoka Advent Calendar 2023の21日目の投稿です。20日目は Rem さんの エンジニア、故郷へ帰る でした。はじまり続きをみる",
+    "pubDatetime": "2023-12-21T01:52:28.000Z",
+    "isPinned": false
+  },
+  {
+    "link": "https://note.com/toshito_hirooka/n/nb612c6a9898b",
+    "title": "高卒新卒でマネーフォワードに入社してみて",
+    "description": "この記事は株式会社マネーフォワードの福岡開発拠点が主催している Money Forward Fukuoka Advent Calendar 2022 の 21 日目の記事です。昨日は 新井 志奈 さんによる「マネーフォワード福岡開発拠点で5周年記念総会とHappy Hourを開催しました！」でした。はじめまして、マネーフォワード福岡拠点所属のフロントエンドエンジニアのwozittoです。続きをみる",
+    "pubDatetime": "2022-12-22T03:41:23.000Z",
+    "isPinned": false
+  },
+  {
+    "link": "https://qiita.com/wozitto/items/00a54846add7151ce27b",
+    "title": "packageの複数のバージョンを管理する方法",
+    "description": "負債解消の際、少しずつリファクタリングをするため、既に使用しているのバージョンのpackageを残しつつバージョンアップしたpackageを使いたい時があると思う。そんな時に使える小技の紹介まず…",
+    "pubDatetime": "2022-06-18T00:45:25.000Z",
+    "isPinned": false
+  },
+  {
     "link": "https://qiita.com/wozitto/items/f353f463f8ec695bb620",
-    "contentSnippet": "#１.はじめに2021年6月に行われた基本情報技術者試験（以下FE）を受験し合格したので、記事にしようと思います。これからFEを取ろうと考えている方の参考になれば幸いです。#２.勉強開始時（2…",
-    "isoDate": "2022-01-21T10:22:29.000Z",
-    "dateMiliSeconds": 1642760549000,
+    "title": "高校生が１ヶ月で基本情報技術者試験に合格してみた",
+    "description": "#１.はじめに2021年6月に行われた基本情報技術者試験（以下FE）を受験し合格したので、記事にしようと思います。これからFEを取ろうと考えている方の参考になれば幸いです。#２.勉強開始時（2…",
+    "pubDatetime": "2022-01-21T10:22:29.000Z",
     "isPinned": false
   }
 ]
