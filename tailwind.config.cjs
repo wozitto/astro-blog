@@ -53,7 +53,17 @@ module.exports = {
         },
         transparent: "transparent",
       },
-      fontFamily: "font-sans",
+      fontFamily: {
+        sans: [
+          '"Noto Sans JP"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          '"Hiragino Kaku Gothic ProN"',
+          '"BIZ UDPGothic"',
+          'Meiryo',
+          'sans-serif',
+        ],},
       typography: {
         DEFAULT: {
           css: {
