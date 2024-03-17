@@ -4,9 +4,6 @@ pubDatetime: 2024-01-03T20:40:08Z
 title: How to use Git Hooks to set Created and Modified Dates
 isPinned: false
 isDraft: false
-tags:
-  - docs
-  - FAQ
 description: How to use Git Hooks to set your Created and Modified Dates on AstroPaper
 ---
 

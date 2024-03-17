@@ -5,9 +5,6 @@ title: How to configure AstroPaper theme
 slug: how-to-configure-astropaper-theme
 isPinned: true
 isDraft: false
-tags:
-  - configuration
-  - docs
 description: How you can make AstroPaper theme absolutely yours.
 ---
 

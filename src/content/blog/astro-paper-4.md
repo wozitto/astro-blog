@@ -5,8 +5,6 @@ title: AstroPaper 4.0
 slug: "astro-paper-v4"
 isPinned: true
 ogImage: ../../assets/images/AstroPaper-v4.png
-tags:
-  - release
 description: "AstroPaper v4: ensuring a smoother and more feature-rich blogging experience."
 ---
 

@@ -4,8 +4,6 @@ pubDatetime: 2024-01-08T18:16:00.000Z
 title: How to add a new Social Icon to AstroPaper
 isPinned: false
 isDraft: false
-tags:
-  - FAQ
 description: How to add a new social icon to AstroPaper
 ---
 

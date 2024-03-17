@@ -9,7 +9,6 @@
       "title: $3",
       "isPinned: ${4|false,true|}",
       "isDraft: ${5|true,false|}",
-      "tags:",
       "  - $6",
       "description: $7",
       "---",

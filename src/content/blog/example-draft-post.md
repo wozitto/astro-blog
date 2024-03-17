@@ -5,9 +5,6 @@ pubDatetime: 2022-06-06T04:06:31Z
 slug: example-draft-post
 isPinned: false
 isDraft: true
-tags:
-  - TypeScript
-  - Astro
 description:
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
